@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Atividade L&#243;gica UC3-003"/>
+        <attribute name="authors" value="vinicius.sgameleira"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-05-12 04:19:57 "/>
+        <attribute name="created" value="dmluaWNpdXMuc2dhbWVsZWlyYTtTQU4wNjc0MzkxVzExLTE7MjAyNS0wNS0xMjsiMDM6MTE6MDkgIjs0MDI3"/>
+        <attribute name="edited" value="dmluaWNpdXMuc2dhbWVsZWlyYTtTQU4wNjc0MzkxVzExLTE7MjAyNS0wNS0xMjsiMDQ6MTk6NTcgIjszOzQxNDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="vendedor" type="String" array="False" size=""/>
+            <declare name="salario, vendas, comissao, pagamentoTotal" type="Integer" array="False" size=""/>
+            <output expression="&quot;Digite seu nome&quot;" newline="True"/>
+            <input variable="vendedor"/>
+            <output expression="&quot;Digite o seu sal&#225;rio&quot;" newline="True"/>
+            <input variable="salario"/>
+            <output expression="&quot;Digite o valor das vendas&quot;" newline="True"/>
+            <input variable="vendas"/>
+            <if expression="vendas &gt; 5000">
+                <then>
+                    <assign variable="comissao" expression="vendas * 0.15"/>
+                </then>
+                <else>
+                    <if expression="vendas &gt;= 1500 &amp;&amp; vendas &lt;= 3000">
+                        <then>
+                            <assign variable="comissao" expression="vendas * 0.10"/>
+                        </then>
+                        <else>
+                            <if expression="vendas &lt; 1500">
+                                <then>
+                                    <assign variable="comissao" expression="vendas * 0.05"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="PagamentoTotal" expression="salario + comissao"/>
+            <output expression="&quot;Vendedor: &quot; &amp; vendedor &amp; &#13;&#10;&#13;&#10;&quot;  Valor de Vendas: R$&quot; &amp; vendas &amp;&#13;&#10;&quot;  Valor da Comiss&#227;o: R$&quot; &amp; comissao &amp;&#13;&#10;&quot;  Valor do Sal&#225;rio: R$&quot; &amp; salario &amp;&#13;&#10;&quot;  Pagamento Total: R$&quot; &amp; pagamentoTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
